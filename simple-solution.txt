@@ -1,0 +1,50 @@
+
+  The following algorithms can be used to solve a 3x3x3 Rubik's cube.
+
+             HS = (F R' F' R)
+             y  = Rotate cube so Right face becomes Front face
+             z  = Rotate cube so Up face becames Right face
+
+             Swap         Flip           Swap           Twist
+             Edges        Edges         Corners        Corners
+             -----        ------        -------        -------
+             HS U         HS y z          HS            HS y z
+             HS U2        HS y z          HS            HS y z
+                          HS y z          HS            HS y z
+                             _                          HS y z
+                         _,-' '-,_                      HS y z
+                     _,-'S'-,_,-' '-,_                  HS y z
+                  ,-'N'-,_,-' '-,_,-'N'-, 
+                 :'-,_,-'S'-,_,-' '-,_,-':
+                 :   :'-,_,-' '-,_,-':   :
+                 :'-,: F :'-,_,-':   :,-':    R   = Right face
+             :'-,:   :'-,:   : W :,-':   :    S   = Swap edges
+             : 2 :'-,:   :'-,:,-': R :,-':    F   = Flip edges
+              '-,: 1 :'-,: F :   :,-':   :    W   = Swap corners (and swap N)
+                 :'-,:   :'-,:,-':   :,-'   0,1,2 = # spots on Front
+                 : 0 :'-,:   : W :,-'
+                  '-,:    '-,:,-'
+
+  Use  intuitive  moves, HS,  and/or SWAP  EDGES to  position each of the four
+  edge-cubies of the Down layer, then the middle layer, then the Up layer. Use
+  FLIP EDGES as needed to orient all edge-cubies.
+
+  Choose one face to be the target face.  Use SWAP  CORNERS,  manipulating the
+  cube  and/or  faces as  needed, to  correctly  position and  orient the four
+  corner-cubies of the target face.  (SWAP CORNERS also works when the cube is
+  rotated 120 degrees about a corner.) Make the target face the Down face. Use
+  SWAP CORNERS to move a corner-cubie from the Up layer to the Down layer.
+
+  Rotate the Up  layer  until the  corner-cubie in the Down layer is  directly
+  below  its  home   position  in  the  Up  layer.  Apply  SWAP  CORNERS.  The
+  corner-cubie  from the Down  layer will move to its home  position in the Up
+  layer and the Down layer will receive a new corner-cubie. Repeat the process
+  (of  rotating  the Up  layer  and  swapping  corner-cubies)  until the  four
+  corner-cubies of the Up layer are in their home  positions.  When  complete,
+  make the Up face the Front face.
+
+  Count the  number of corner  squares  ('spots') on the Front face that match
+  the Front  color.  Rotate the cube  around the  z-axis  (Front face) until a
+  square with the  Front color  occupies '0', '1', or '2'; the  number that is
+  occupied must equal the spot-count. Apply TWIST CORNERS. Repeat this process
+  (of counting, rotating, and TWIST CORNERS) until the cube is solved.
